@@ -1,5 +1,7 @@
 package org.example.clases;
 
+import java.util.Scanner;
+
 public class Jugador {
 
     private String nombre;
@@ -34,6 +36,13 @@ public class Jugador {
     }
 
     public void setEdad(int edad) {
+        Scanner entradaPorTeclado = new Scanner(System.in);
+        while (edad < 18 || edad > 40) {
+            System.out.println("No se acepta el jugador la edad minima debe ser 18 años y la maxima 40 años");
+            System.out.println("Nuevamente ingrese una edad valida: ");
+            edad = entradaPorTeclado.nextInt();
+
+        }
         this.edad = edad;
     }
 
